@@ -40,13 +40,13 @@ def update_user(user):
 
 users = [user for id in user_ids if (user := get_user(id)) is not None]  # := Walrus operator. A linha pega o usuario para a lista de ID's e atruibiu ele ao Get e so atribuira se de fato for None
 
-"""for user in users:
+for user in users:
     news = generate_ai_msg(user)
     print(news)
     user['news'].append({
         "icon": "https://digitalinnovationone.github.io/santander-dev-week-2023-api/icons/credit.svg",
         "description": news
-    }) """
+    })
 
 for user in users:
     success = update_user(user)
