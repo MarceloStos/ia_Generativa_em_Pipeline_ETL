@@ -1,4 +1,5 @@
 import requests
+import random
 import openai
 import json
 import pandas as pd
@@ -30,7 +31,8 @@ def generate_ai_msg(user):
         }
     ]
     )
-    responseChatGPT = completion.choices[0].message.content              # Se tiver adicionando aspas duplas, para remover basta incluir o .strip('\"')
+    numero_aleatorio = random.randint(0, 5)
+    responseChatGPT = completion.choices[numero_aleatorio].message.content              # Se tiver adicionando aspas duplas, para remover basta incluir o .strip('\"')
     return responseChatGPT
 
 def update_user(user):
